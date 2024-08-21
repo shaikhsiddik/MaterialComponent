@@ -33,9 +33,11 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.materialcomponent.components.BottomAppBarScreen
 import com.example.materialcomponent.components.MaterialButtonScreen
 import com.example.materialcomponent.components.MaterialSelectionUi
 import com.example.materialcomponent.components.MaterialTextFieldScreen
+import com.example.materialcomponent.components.MaterialToolBarScreen
 import com.example.materialcomponent.ui.theme.MaterialComponentTheme
 
 class MainActivity : ComponentActivity() {
@@ -76,6 +78,19 @@ class MainActivity : ComponentActivity() {
                             MaterialSelectionUi()
 
                         }
+
+                        composable("material_toolbar"){
+
+                            MaterialToolBarScreen()
+
+                        }
+
+                        composable("material_bottom_appBar"){
+
+                            BottomAppBarScreen()
+
+                        }
+
                     }
                 }
             }
@@ -113,7 +128,21 @@ fun HomeScreen(navHostController: NavHostController){
 
         }
 
-        
+        Spacer(modifier = Modifier.height(8.dp))
+
+        Button(onClick = { navHostController.navigate("material_toolbar") }) {
+
+            Text(text = "Material Toolbar Ui")
+
+        }
+
+        Spacer(modifier = Modifier.height(8.dp))
+
+        Button(onClick = { navHostController.navigate("material_bottom_appBar") }) {
+
+            Text(text = "Material Bottom AppBar")
+
+        }
     }
 
 }
