@@ -33,6 +33,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.materialcomponent.components.BottomAppBarBadgeScreen
 import com.example.materialcomponent.components.BottomAppBarScreen
 import com.example.materialcomponent.components.MaterialButtonScreen
 import com.example.materialcomponent.components.MaterialSelectionUi
@@ -91,6 +92,12 @@ class MainActivity : ComponentActivity() {
 
                         }
 
+                        composable("material_bottom_badge"){
+
+                            BottomAppBarBadgeScreen()
+
+                        }
+
                     }
                 }
             }
@@ -143,6 +150,15 @@ fun HomeScreen(navHostController: NavHostController){
             Text(text = "Material Bottom AppBar")
 
         }
+
+        Spacer(modifier = Modifier.height(8.dp))
+
+        Button(onClick = { navHostController.navigate("material_bottom_badge") }) {
+
+            Text(text = "Material Bottom Badge")
+
+        }
+
     }
 
 }
